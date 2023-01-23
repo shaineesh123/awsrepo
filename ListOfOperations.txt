@@ -1,0 +1,86 @@
+1. LIST OF OPERATIONS.
+
+Specifications:
+class definitions:
+class ArrayListOps:
+method definitions:
+makeArrayListInt(int n): Method to create an arrayList with same number of elements as n and set
+elements to 0
+return type: ArrayList<Integer>
+visibilty: public
+reverseList(ArrayList<Integer> list): Method to Reverse list
+return type: ArrayList<Integer>
+visibilty: public
+changeList(ArrayList<Integer> list, int m, int n): Method to change all occurences of m to n in list
+return type: ArrayList<Integer>
+visibilty: public
+Task:
+Your task is to create a class ArrayListOps and implement the following:
+1. makeArrayListInt(int n): Method to create an ArrayList with number of elements as n and set elements to
+0.
+If number of elements n is 4 , then the method should return a list containing [0,0,0,0]
+2. reverseList(ArrayList<Integer> list): Method to Reverse list
+3. changeList(ArrayList<Integer> list, int m, int n): Method to change all occurences of m to n in list
+Important:
+To check your program, you can use the main() method (in Source class) given in the stub. You can make
+suitable function calls and use RUN CODE button to check your main() function output.
+Sample Input
+ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(10, 25, 33, 28, 10, 12));
+n = 4(method makeArrayListInt)
+m = 28, n = 20(method changeList)
+Sample Output
+[0, 0, 0, 0]
+[12, 10, 28, 33, 25, 10]
+[12, 10, 20, 33, 25, 10]
+NOTE:
+The above Sample Output is only for demonstration purposes and will be obtained if you implement the
+main() method with all method calls accordingly.
+Upon implementation of main() method, you can use the RUN CODE button to pass input data in the method
+calls and arrive at the Sample Output.
+Execution time limit
+10 seconds
+output:
+package DoSelect;
+import java.
+
+
+import java.util.*;
+
+class ArrayListOps {
+public static ArrayList<Integer>makeArrayListInt(int n)
+  {
+int array[]=new int[n];
+for(int i=0;i<n;i++)
+{
+array[i]=0;
+}
+ArrayList<Integer> list = new ArrayList<>();
+for(Integer integer:array){
+list.add(integer);
+}
+return list;
+}
+
+public static ArrayList<Integer>reverseList(ArrayList<Integer>list)
+{
+for(int k=0,j=list.size()-1;k<j;k++)
+{
+list.add(k,list.remove(j));
+}
+return list;
+}
+
+public static ArrayList<Integer>changeList(ArrayList<Integer>list,int m,int n)
+{
+int index=list.indexOf(m);
+list.set(index,n);
+return list;
+}
+
+public class source{
+  public static void main(String[] args){
+  ArrayListOps.makeArrayListInt(4)
+  ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(10, 25, 33, 28, 10, 12));
+  ArrayListOps.reverseList(list);
+  ArrayListOps.changeList(list,28,20);
+}}
